@@ -3,17 +3,36 @@ import java.util.Scanner;
 
 /**
  * THis is just a simple structure to hold information about the result of an attack to make returning and handling it easier.
- * Setters with return of this to make chaining possible.
+ * Setters with return of this to make chaining possible. This shouldn't need any further commenting as it's just a POJO with
+ * public values and only setters.
  */
 class WeaponAttack
 {
-    public int rawDamage;
-    public boolean crit;
-    public boolean hit;
-    public int netDamage;
-    public int buffAmount;
+    /**
+     * The result of the attack roll
+     */
     public int attackRoll;
-
+    /**
+     * The pre-buff pre-crit damage
+     */
+    public int rawDamage;
+    /**
+     * If the attack was a crit
+     */
+    public boolean crit;
+    /**
+     * If the attack was a miss or hit
+     */
+    public boolean hit;
+    /**
+     * The calculated net damage
+     */
+    public int netDamage;
+    /**
+     * The amount of buff applied
+     */
+    public int buffAmount;
+    
     public WeaponAttack(int attackRoll, boolean hit)
     {
         this.attackRoll = attackRoll;
@@ -253,17 +272,26 @@ class Weapon
     }
 }
 
+/**
+ * A class to encapsulate the enemy
+ */
 class Enemy
 {
     protected String name;
     protected int hp;
     protected int armor;
-
+    
     public Enemy()
     {
         this("Troll", 100, 12);
     }
 
+    /**
+     * Actual default constructor
+     * @param name  The name of the enemy
+     * @param hp    The amount of hp it has
+     * @param armor The armor value
+     */
     public Enemy(String name, int hp, int armor)
     {
         this.name = name;
@@ -281,6 +309,10 @@ class Enemy
         return this.hp;
     }
 
+    /**
+     * A method to reduce the enemy's health
+     * @param damageAmount
+     */
     public void damage(int damageAmount)
     {
         this.hp -= damageAmount;
@@ -309,6 +341,7 @@ public class QuestionFour
         System.out.println(String.format("Your damage is %s (%s)", playerWeapon.getDamageRange(), playerWeapon.getDamageText()));
         
         int buff = 0;
+        // the business logic
         while(troll.getHP() > 0)
         {
             String act = sc.nextLine().toLowerCase();
