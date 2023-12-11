@@ -1,14 +1,11 @@
-import java.util.Scanner;
-
-public class QuestionThree
+public class QuestionThree extends Question
 {
     private static PrimeChecker pc;
     public static void main(String[] args)
     {
         pc = new PrimeChecker();
         
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Please enter an integer n: ");
+        System.out.print("Enter how many numbers you want to check for primality: ");
         int n = sc.nextInt();
         if(n > 2)
         {
@@ -18,7 +15,7 @@ public class QuestionThree
         {
             System.out.println("There are no positive prime numbers less than 2");
         }
-        sc.close();
+        return;
     }
 
     public static void printPrimes(int n)
@@ -29,11 +26,10 @@ public class QuestionThree
             boolean isPrime = pc.isPrime(i);
             if(isPrime)
             {
-                System.out.println(i+" is prime");
                 primes++;
             }
         }
-        System.out.println(primes);
+        System.out.println("There are "+primes+" primes between 0 and "+n);
     }
 
 }

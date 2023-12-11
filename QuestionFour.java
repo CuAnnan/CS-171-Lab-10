@@ -1,5 +1,4 @@
 import java.util.Random;
-import java.util.Scanner;
 
 /**
  * THis is just a simple structure to hold information about the result of an attack to make returning and handling it easier.
@@ -323,14 +322,13 @@ class Enemy
 /**
  * A class to hold the logic of the attack rounds.
  */
-public class QuestionFour
+public class QuestionFour extends Question
 {
     protected static int buffAmount = 5;
     
     public static void main(String[] args)
     {
         
-        Scanner sc = new Scanner(System.in);
         Weapon playerWeapon = new Weapon();
         Enemy troll = new Enemy();
         int turns = 0;
@@ -363,7 +361,7 @@ public class QuestionFour
             turns++;
         }
         System.out.println(String.format("You defeated the %s in %d turns", troll.name, turns));
-        sc.close();
+        return;
     }
 
     /**

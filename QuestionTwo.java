@@ -1,8 +1,5 @@
-import java.util.Scanner;
-
-public class QuestionTwo
+public class QuestionTwo extends Question
 {
-    protected static Scanner sc;
 
     /**
      * Checks that a given day can belong to a given month.
@@ -87,8 +84,7 @@ public class QuestionTwo
 
     public static void main(String[] args)
     {
-
-        sc = new Scanner(System.in);
+        System.out.print("Please enter the day (1-31): ");
         // get the day part
         int day = getDatePart("day", 31);
         // only proceed if it's valid
@@ -96,6 +92,7 @@ public class QuestionTwo
         {
             return;
         }
+        System.out.println("Please enter the month (1-12)");
         // same for the month
         int month = getDatePart("month", 12);
         if(month == -1)
@@ -113,6 +110,6 @@ public class QuestionTwo
         {
             System.out.println("Invalid date entered");
         }
-        sc.close();
+        return;
     }
 }

@@ -1,9 +1,6 @@
-import java.util.Scanner;
-
-public class QuestionOne
+public class QuestionOne extends Question
 {
-    protected static Scanner sc;
-
+    
     /**
      * Pick a shape from input
      */
@@ -96,12 +93,11 @@ public class QuestionOne
 
     public static void main(String[] args)
     {
-        sc = new Scanner(System.in);
         boolean working = true;
         while(working)
         {
             working = processShape();
         };
-        sc.close();
+        return;
     }
 }
