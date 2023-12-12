@@ -371,6 +371,7 @@ public class QuestionFour extends Question
      */
     public static void printRoundResult(Weapon weapon, Enemy enemy)
     {
+        sc = getScanner();
         WeaponAttack attack = weapon.lastAttack;
         System.out.println("You rolled "+attack.attackRoll);
         if(attack.hit)

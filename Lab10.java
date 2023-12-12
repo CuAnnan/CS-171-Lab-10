@@ -1,9 +1,7 @@
-import java.util.Scanner;
 public class Lab10
 {
     public static void main(String[] args)
     {
-        Question.sc = new Scanner(System.in);
         System.out.println("Question One:");
         QuestionOne.main(args);
         System.out.println("Question Two:");

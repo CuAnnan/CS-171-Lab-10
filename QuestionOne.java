@@ -93,6 +93,7 @@ public class QuestionOne extends Question
 
     public static void main(String[] args)
     {
+        sc = getScanner();
         boolean working = true;
         while(working)
         {

@@ -3,6 +3,7 @@ public class QuestionThree extends Question
     private static PrimeChecker pc;
     public static void main(String[] args)
     {
+        sc = getScanner();
         pc = new PrimeChecker();
         
         System.out.print("Enter how many numbers you want to check for primality: ");

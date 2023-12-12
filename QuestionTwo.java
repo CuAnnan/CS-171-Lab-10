@@ -84,6 +84,7 @@ public class QuestionTwo extends Question
 
     public static void main(String[] args)
     {
+        sc = getScanner();
         System.out.print("Please enter the day (1-31): ");
         // get the day part
         int day = getDatePart("day", 31);
